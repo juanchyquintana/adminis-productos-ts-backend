@@ -1,12 +1,11 @@
+import { createProduct, getProduct } from "../controllers/product";
 import { Router } from "express";
-import { createProduct } from "../controllers/product";
 
-const router = Router()
+import productValidator from "../validator/productValidator";
 
-router.get('/', (req, res) => {
-    res.json('Hooola')
-})
+const router = Router();
 
-router.post('/', createProduct)
+router.get("/", getProduct);
+router.post("/", productValidator, createProduct);
 
 export default router;
