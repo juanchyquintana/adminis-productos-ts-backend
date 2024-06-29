@@ -8,18 +8,18 @@ class Proudct extends Model {
     @Column({
         type: DataType.STRING(100)
     })
-    name: string
+    declare name: string
 
     @Column({
         type: DataType.FLOAT
     })
-    price: number
+    declare price: number
 
     @Default(true)
     @Column({
         type: DataType.BOOLEAN
     })
-    availability: boolean
+    declare availability: boolean
 }
 
 export default Proudct;
